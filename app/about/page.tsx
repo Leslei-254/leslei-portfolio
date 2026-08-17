@@ -1,50 +1,28 @@
 import Link from "next/link";
 
-const certifications = [
-  "AI Fluency: Framework & Foundations",
-  "AI Capabilities and Limitations",
-  "Claude 101",
-  "Claude Code 101",
-  "Introduction to Claude Cowork",
-  "Claude Code in Action",
-  "Building with the Claude API",
-  "Introduction to Model Context Protocol",
-  "Model Context Protocol: Advanced Topics",
-  "Introduction to agent skills",
-  "Introduction to subagents",
-  "Claude with Amazon Bedrock",
-  "Claude with Google Cloud's Vertex AI",
-  "AI Fluency for students",
-  "AI Fluency for Small Businesses",
-  "AI Fluency for educators",
-  "Teaching AI Fluency",
-  "AI Fluency for nonprofits",
-  "AI Fluency for Builders",
-];
+const certifications = ["AI Fluency: Framework & Foundations","AI Capabilities and Limitations","Claude 101","Claude Code 101","Introduction to Claude Cowork","Claude Code in Action","Building with the Claude API","Introduction to Model Context Protocol","Model Context Protocol: Advanced Topics","Introduction to agent skills","Introduction to subagents","Claude with Amazon Bedrock","Claude with Google Cloud's Vertex AI","AI Fluency for students","AI Fluency for Small Businesses","AI Fluency for educators","Teaching AI Fluency","AI Fluency for nonprofits","AI Fluency for Builders"];
+const skills = ["JavaScript","TypeScript","Next.js","Node.js","Prisma","Neon","AI tools"];
 
 export default function AboutPage() {
-  return (
-    <main className="min-h-screen bg-white text-zinc-950">
-      <article className="mx-auto max-w-5xl px-6 py-20 sm:py-28">
-        <Link href="/" className="text-sm text-zinc-500 hover:text-black">← Home</Link>
-        <header className="mt-12 max-w-3xl">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">About Me</p>
-          <h1 className="mt-3 text-5xl font-semibold tracking-tight sm:text-6xl">A builder becoming a stronger software and AI engineer.</h1>
-          <p className="mt-6 text-xl leading-8 text-zinc-600">Right now, I would describe myself as a Backend AI Engineer with exposure across software development, AI, and web technologies. I know enough to build, and I&apos;m working toward becoming a strong software and AI engineer.</p>
-        </header>
-        <div className="mt-20 space-y-20">
-          <section><h2 className="text-2xl font-semibold">My Story</h2><p className="mt-4 max-w-3xl leading-8 text-zinc-600">I&apos;m building my skills through practical projects, troubleshooting, certifications, and continuous learning. I enjoy turning ideas into working software and learning from the problems that come up along the way.</p></section>
-          <section><h2 className="text-2xl font-semibold">Career Journey</h2><p className="mt-4 max-w-3xl leading-8 text-zinc-600">My focus is moving toward software and AI engineering through hands-on work. Projects such as LeadDesk Mini CRM, Polite Scraper, and Dokile AI reflect the different areas I&apos;m exploring and building in.</p></section>
-          <section><h2 className="text-2xl font-semibold">What I Value</h2><div className="mt-6 grid gap-4 sm:grid-cols-3">{[["Commitment", "Keep showing up and keep building."], ["Persistence", "Work through problems instead of giving up."], ["Goals", "Keep learning toward becoming a stronger engineer."]].map(([title, text]) => <div key={title} className="rounded-2xl border border-zinc-200 p-6"><h3 className="font-semibold">{title}</h3><p className="mt-2 text-sm leading-6 text-zinc-600">{text}</p></div>)}</div></section>
-          <section>
-            <div className="flex flex-wrap items-end justify-between gap-4"><div><h2 className="text-2xl font-semibold">Anthropic Certifications</h2><p className="mt-2 text-zinc-600">19 certifications listed from my current portfolio records.</p></div><span className="rounded-full border border-zinc-200 px-3 py-1 text-xs font-medium">19 listed</span></div>
-            <div className="mt-6 grid gap-3 sm:grid-cols-2">{certifications.map((cert) => <div key={cert} className="rounded-xl border border-zinc-200 px-4 py-3 text-sm text-zinc-700">{cert}</div>)}</div>
-          </section>
-          <section><h2 className="text-2xl font-semibold">Other Learning</h2><p className="mt-4 max-w-3xl leading-8 text-zinc-600">I&apos;m also continuing my learning through freeCodeCamp and other technical programs. My approach is to combine structured learning with projects where I have to actually build and troubleshoot.</p></section>
-          <section><h2 className="text-2xl font-semibold">My Resume</h2><p className="mt-4 max-w-3xl leading-8 text-zinc-600">My current CV describes my experience in technical support, AI-assisted workflows, digital operations, content management, and software development, alongside my Diploma in Information and Communication Technology and current technical learning.</p><a href="mailto:Lesleimakori@gmail.com?subject=Resume%20Request" className="mt-6 inline-block rounded-full bg-zinc-950 px-6 py-3 text-sm font-medium text-white">Request Resume PDF →</a></section>
-          <section className="border-t border-zinc-200 pt-12"><h2 className="text-3xl font-semibold tracking-tight">I&apos;m building toward what comes next.</h2><p className="mt-3 max-w-2xl leading-7 text-zinc-600">I&apos;m always looking for opportunities to build, learn, and solve real problems.</p><div className="mt-7 flex flex-wrap gap-3"><Link href="/work" className="rounded-full bg-zinc-950 px-6 py-3 text-sm font-medium text-white">View My Work</Link><Link href="/contact" className="rounded-full border border-zinc-300 px-6 py-3 text-sm font-medium">Get In Touch</Link></div></section>
+  return <main className="min-h-screen overflow-hidden bg-[#030712] text-white selection:bg-violet-500/30">
+    <section className="relative border-b border-white/[.07] bg-[radial-gradient(circle_at_80%_20%,rgba(37,99,235,.14),transparent_30%),radial-gradient(circle_at_15%_60%,rgba(124,58,237,.1),transparent_28%),#030712]">
+      <div className="absolute inset-0 opacity-15" style={{backgroundImage:"linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px)",backgroundSize:"48px 48px"}}/>
+      <div className="relative mx-auto max-w-6xl px-6 pb-20 pt-16 sm:pb-24 sm:pt-20"><Link href="/" className="text-sm text-slate-500 transition hover:text-cyan-300">← Home</Link>
+        <div className="mt-14 grid items-center gap-12 lg:grid-cols-[1fr_.7fr]">
+          <div><p className="text-[10px] font-medium uppercase tracking-[.25em] text-violet-300">About Me</p><h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">A builder becoming a stronger <span className="bg-gradient-to-r from-cyan-200 to-violet-300 bg-clip-text text-transparent">software + AI engineer.</span></h1><p className="mt-6 max-w-2xl text-lg leading-8 text-slate-400">Right now, I describe myself as a Backend AI Engineer with exposure across software development, AI, and web technologies. I know enough to build — and I&apos;m working toward becoming stronger.</p><div className="mt-7 flex flex-wrap gap-2">{skills.map(s=><span key={s} className="rounded-full border border-white/10 bg-white/[.03] px-3 py-1.5 text-[10px] text-slate-400">{s}</span>)}</div></div>
+          <div className="relative mx-auto w-full max-w-sm"><div className="absolute inset-6 rounded-full bg-violet-600/20 blur-3xl"/><div className="relative rounded-[2rem] border border-cyan-300/20 bg-white/[.03] p-3 shadow-[0_30px_90px_rgba(37,99,235,.15)]"><div className="aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-[#0a1220]"><img src="/leslei-makori.jpg" alt="Leslei Makori" className="h-full w-full object-cover object-center"/></div><div className="flex items-center justify-between px-3 py-4"><div><p className="text-[9px] uppercase tracking-[.2em] text-cyan-300">Backend AI Engineer</p><p className="mt-1 text-xs text-slate-500">Builder · Learner · Troubleshooter</p></div><span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_14px_rgba(103,232,249,.8)]"/></div></div></div>
         </div>
-      </article>
-    </main>
-  );
+      </div>
+    </section>
+
+    <section className="mx-auto max-w-6xl px-6 py-20 sm:py-24"><div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr]"><div><p className="text-[10px] uppercase tracking-[.25em] text-cyan-300">The story</p><h2 className="mt-3 text-3xl font-semibold sm:text-4xl">Learning by building.</h2></div><div className="space-y-6 text-slate-400"><p className="leading-8">I&apos;m building my skills through practical projects, troubleshooting, certifications, and continuous learning. I enjoy turning ideas into working software and learning from the problems that come up along the way.</p><p className="leading-8">My focus is moving toward software and AI engineering through hands-on work. LeadDesk Mini CRM, Polite Scraper, and Dokile AI reflect the different areas I&apos;m exploring and building in.</p></div></div></section>
+
+    <section className="border-y border-white/[.07] bg-[#050a14]"><div className="mx-auto max-w-6xl px-6 py-20 sm:py-24"><div className="max-w-2xl"><p className="text-[10px] uppercase tracking-[.25em] text-violet-300">What I value</p><h2 className="mt-3 text-3xl font-semibold sm:text-4xl">Commitment. Persistence. Goals.</h2></div><div className="mt-10 grid gap-4 md:grid-cols-3">{[["01","Commitment","Keep showing up and keep building."],["02","Persistence","Work through problems instead of giving up."],["03","Goals","Keep learning toward becoming a stronger engineer."]].map(([n,t,d])=><div key={n} className="rounded-2xl border border-white/10 bg-white/[.025] p-7 transition hover:-translate-y-1 hover:border-violet-400/30"><span className="text-3xl font-semibold text-white/20">{n}</span><h3 className="mt-5 text-lg font-semibold">{t}</h3><p className="mt-2 text-sm leading-6 text-slate-500">{d}</p></div>)}</div></div></section>
+
+    <section className="mx-auto max-w-6xl px-6 py-20 sm:py-24"><div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between"><div><p className="text-[10px] uppercase tracking-[.25em] text-cyan-300">Learning & certification</p><h2 className="mt-3 text-3xl font-semibold sm:text-4xl">Anthropic certifications.</h2><p className="mt-3 text-sm text-slate-500">19 certifications listed from my current portfolio records.</p></div><span className="w-fit rounded-full border border-violet-300/20 bg-violet-500/[.06] px-3 py-1.5 text-[10px] text-violet-200">19 listed</span></div><div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{certifications.map((cert,i)=><div key={cert} className="group rounded-xl border border-white/10 bg-white/[.025] px-4 py-4 transition hover:border-cyan-300/20 hover:bg-white/[.04]"><div className="flex gap-3"><span className="font-mono text-[9px] text-violet-400/60">{String(i+1).padStart(2,"0")}</span><span className="text-sm leading-5 text-slate-400 group-hover:text-slate-200">{cert}</span></div></div>)}</div></section>
+
+    <section className="border-y border-white/[.07] bg-[radial-gradient(circle_at_15%_50%,rgba(37,99,235,.1),transparent_30%),radial-gradient(circle_at_85%_50%,rgba(124,58,237,.1),transparent_30%),#050a14]"><div className="mx-auto max-w-6xl px-6 py-20 sm:py-24"><div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-center"><div><p className="text-[10px] uppercase tracking-[.25em] text-violet-300">Other learning</p><h2 className="mt-3 text-3xl font-semibold">Structured learning + real projects.</h2><p className="mt-4 max-w-2xl leading-7 text-slate-500">I&apos;m also continuing my learning through freeCodeCamp and other technical programs. My approach is to combine structured learning with projects where I have to actually build and troubleshoot.</p></div><div className="rounded-2xl border border-white/10 bg-white/[.03] p-6"><p className="text-[9px] uppercase tracking-[.2em] text-slate-600">Approach</p><p className="mt-3 text-lg font-medium">Learn → Build → Troubleshoot → Ship</p></div></div></div></section>
+
+    <section className="mx-auto max-w-6xl px-6 py-20 sm:py-24"><div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/[.04] to-violet-500/[.05] p-8 sm:p-12"><div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between"><div><p className="text-[10px] uppercase tracking-[.25em] text-cyan-300">Keep building</p><h2 className="mt-3 text-3xl font-semibold sm:text-4xl">I&apos;m building toward what comes next.</h2><p className="mt-3 max-w-2xl text-sm leading-7 text-slate-500">I&apos;m always looking for opportunities to build, learn, and solve real problems.</p></div><div className="flex flex-wrap gap-3"><Link href="/work" className="rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 px-6 py-3 text-sm font-semibold">View My Work</Link><Link href="/contact" className="rounded-full border border-white/15 px-6 py-3 text-sm font-medium text-slate-300">Get In Touch</Link></div></div></div></section>
+  </main>;
 }
