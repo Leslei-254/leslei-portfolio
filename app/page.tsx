@@ -1,153 +1,44 @@
 import Link from "next/link";
 
 const projects = [
-  {
-    number: "01",
-    status: "Ready to use",
-    title: "LeadDesk Mini CRM",
-    description:
-      "A clean CRM for businesses to view, track, and manage customer form submissions.",
-    href: "/work/leaddesk",
-    tech: ["Next.js", "JavaScript", "Prisma", "Neon", "Vercel"],
-  },
-  {
-    number: "02",
-    status: "Completed",
-    title: "Polite Scraper",
-    description:
-      "A production-minded Node.js scraper for collecting structured book data from Books to Scrape.",
-    href: "/work/polite-scraper",
-    tech: ["Node.js", "Cheerio", "Axios", "Schema Validation"],
-  },
-  {
-    number: "03",
-    status: "In development",
-    title: "Dokile AI",
-    description:
-      "An AI productivity and creativity platform bringing AI tools, content creation, digital services, software development, domains, and hosting together in one place.",
-    href: "/work/dokile-ai",
-    tech: ["JavaScript", "TypeScript", "AI"],
-  },
+  { number: "01", status: "Ready to use", title: "LeadDesk Mini CRM", description: "A clean CRM for businesses to view, track, and manage customer form submissions.", href: "/work/leaddesk", tech: ["Next.js", "Prisma", "Neon"], type: "crm" },
+  { number: "02", status: "Completed", title: "Polite Scraper", description: "A production-minded Node.js scraper that turns book pages into structured JSON.", href: "/work/polite-scraper", tech: ["Node.js", "Cheerio", "JSON"], type: "scraper" },
+  { number: "03", status: "In development", title: "Dokile AI", description: "An AI platform bringing tools, content, software services, domains, and hosting together.", href: "/work/dokile-ai", tech: ["JavaScript", "TypeScript", "AI"], type: "ai" },
 ];
 
-const skills = [
-  "JavaScript",
-  "TypeScript",
-  "Next.js",
-  "Node.js",
-  "Prisma",
-  "Neon",
-  "AI tools",
-];
+const skills = ["JavaScript", "TypeScript", "Next.js", "Node.js", "Prisma", "Neon", "AI tools"];
+
+function ProjectGraphic({ type }: { type: string }) {
+  if (type === "crm") return <div className="relative h-52 overflow-hidden rounded-2xl bg-zinc-950 p-5 text-white"><div className="absolute right-5 top-5 h-24 w-24 rounded-full border border-white/20" /><div className="absolute right-10 top-10 h-14 w-14 rounded-full border border-white/30" /><div className="relative space-y-3"><div className="h-2 w-24 rounded-full bg-white/80" /><div className="grid grid-cols-3 gap-2 pt-3"><div className="h-20 rounded-lg border border-white/15 bg-white/5" /><div className="h-20 rounded-lg border border-white/15 bg-white/5" /><div className="h-20 rounded-lg border border-white/15 bg-white/5" /></div><div className="h-2 w-40 rounded-full bg-white/20" /></div><span className="absolute bottom-5 right-5 text-xs text-white/50">FORM → CRM → DONE</span></div>;
+  if (type === "scraper") return <div className="relative h-52 overflow-hidden rounded-2xl bg-zinc-100 p-5"><div className="flex items-center gap-2 text-xs font-mono text-zinc-500"><span>books.toscrape.com</span><span>→</span><span>scraper</span></div><div className="mt-7 grid grid-cols-5 items-center gap-2"><div className="h-20 rounded-lg border border-zinc-300 bg-white p-2"><div className="h-2 w-8 rounded bg-zinc-300" /><div className="mt-2 h-9 rounded bg-zinc-100" /></div><div className="text-center text-zinc-400">→</div><div className="h-20 rounded-lg border border-zinc-300 bg-white p-2 font-mono text-[9px] text-zinc-500">parse()<br />normalize()<br />validate()</div><div className="text-center text-zinc-400">→</div><div className="h-20 rounded-lg bg-zinc-950 p-2 font-mono text-[9px] text-white">books.json<br /><br />{`{ data: [] }`}</div></div><span className="absolute bottom-4 left-5 text-xs font-medium uppercase tracking-wider text-zinc-500">Web → HTML → JSON</span></div>;
+  return <div className="relative h-52 overflow-hidden rounded-2xl bg-zinc-950 p-5 text-white"><div className="absolute inset-0 opacity-30" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px)", backgroundSize: "28px 28px" }} /><div className="relative flex h-full items-center justify-center"><div className="flex h-28 w-28 items-center justify-center rounded-full border border-white/30 bg-white/10 text-2xl font-semibold backdrop-blur">AI</div><span className="absolute left-6 top-12 text-xs text-white/60">TOOLS</span><span className="absolute right-5 top-8 text-xs text-white/60">CONTENT</span><span className="absolute bottom-9 left-10 text-xs text-white/60">SOFTWARE</span><span className="absolute bottom-10 right-8 text-xs text-white/60">DOMAINS</span></div></div>;
+}
 
 export default function Home() {
-  return (
-    <main className="min-h-screen bg-white text-zinc-950">
-      <header className="border-b border-zinc-200">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <Link href="/" className="font-semibold tracking-tight">
-            Leslei Makori
-          </Link>
-          <div className="flex items-center gap-6 text-sm text-zinc-700">
-            <Link href="/work" className="hover:text-black">Work</Link>
-            <Link href="/about" className="hover:text-black">About</Link>
-            <Link href="/blog" className="hover:text-black">Blog</Link>
-            <Link href="/contact" className="hover:text-black">Contact</Link>
-          </div>
-        </nav>
-      </header>
-
-      <section className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
-        <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">
-          AI · Software · Web Development
-        </p>
-        <h1 className="max-w-4xl text-5xl font-semibold tracking-tight sm:text-7xl">
-          I build practical AI-powered software and digital products.
-        </h1>
-        <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-600">
-          I&apos;m a Backend AI Engineer with exposure across software development, AI, and web technologies. I know enough to build, and I keep developing my skills through real projects and hands-on problem solving.
-        </p>
-        <div className="mt-9 flex flex-wrap gap-4">
-          <Link href="/work" className="rounded-full bg-zinc-950 px-6 py-3 text-sm font-medium text-white hover:bg-zinc-800">
-            View My Work
-          </Link>
-          <Link href="/about" className="rounded-full border border-zinc-300 px-6 py-3 text-sm font-medium hover:border-zinc-950">
-            About Me
-          </Link>
-        </div>
-      </section>
-
-      <section className="border-y border-zinc-200 bg-zinc-50">
-        <div className="mx-auto max-w-6xl px-6 py-16">
-          <div className="flex items-end justify-between gap-6">
-            <div>
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">Featured Work</p>
-              <h2 className="mt-2 text-3xl font-semibold tracking-tight">Things I&apos;ve built and I&apos;m building.</h2>
-            </div>
-            <Link href="/work" className="hidden text-sm font-medium sm:block">View all work →</Link>
-          </div>
-
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {projects.map((project) => (
-              <Link key={project.href} href={project.href} className="group rounded-2xl border border-zinc-200 bg-white p-6 transition hover:-translate-y-1 hover:border-zinc-400">
-                <div className="flex items-center justify-between gap-4">
-                  <p className="text-sm text-zinc-500">{project.number}</p>
-                  <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">{project.status}</p>
-                </div>
-                <h3 className="mt-10 text-xl font-semibold tracking-tight group-hover:underline">{project.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-zinc-600">{project.description}</p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
-                    <span key={tech} className="rounded-full border border-zinc-200 px-2.5 py-1 text-xs text-zinc-600">{tech}</span>
-                  ))}
-                </div>
-                <p className="mt-6 text-sm font-medium">View case study →</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">What I Build</p>
-        <h2 className="mt-2 text-3xl font-semibold tracking-tight">Building, troubleshooting, and improving.</h2>
-        <div className="mt-8 grid gap-5 md:grid-cols-3">
-          <div className="rounded-2xl border border-zinc-200 p-6">
-            <h3 className="text-xl font-semibold">AI Solutions</h3>
-            <p className="mt-3 text-sm leading-6 text-zinc-600">I build practical AI-powered tools and experiences.</p>
-          </div>
-          <div className="rounded-2xl border border-zinc-200 p-6">
-            <h3 className="text-xl font-semibold">Web & Software</h3>
-            <p className="mt-3 text-sm leading-6 text-zinc-600">I build functional web applications and software products.</p>
-          </div>
-          <div className="rounded-2xl border border-zinc-200 p-6">
-            <h3 className="text-xl font-semibold">Problem Solving</h3>
-            <p className="mt-3 text-sm leading-6 text-zinc-600">I use AI as a build partner and troubleshoot problems until the pieces work together.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-zinc-200 bg-zinc-50">
-        <div className="mx-auto max-w-6xl px-6 py-16">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">Technologies</p>
-          <h2 className="mt-2 text-3xl font-semibold tracking-tight">The tools I use to build.</h2>
-          <div className="mt-8 flex flex-wrap gap-3">
-            {skills.map((skill) => (
-              <span key={skill} className="rounded-full border border-zinc-300 bg-white px-4 py-2 text-sm">{skill}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-zinc-200">
-        <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-16 sm:flex-row sm:items-center sm:justify-between">
+  return <main className="min-h-screen overflow-hidden bg-white text-zinc-950">
+    <section className="relative border-b border-zinc-200">
+      <div className="absolute inset-0 -z-0 opacity-60" style={{ backgroundImage: "radial-gradient(circle at 20% 20%, rgba(0,0,0,.07) 1px, transparent 1px), radial-gradient(circle at 80% 70%, rgba(0,0,0,.05) 1px, transparent 1px)", backgroundSize: "28px 28px, 42px 42px" }} />
+      <div className="relative mx-auto max-w-6xl px-6 pb-24 pt-20 sm:pb-32 sm:pt-28">
+        <div className="grid items-center gap-14 lg:grid-cols-[1.15fr_.85fr]">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">Have a project or idea?</p>
-            <h2 className="mt-2 text-3xl font-semibold tracking-tight">Let&apos;s build, learn, and solve real problems.</h2>
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-zinc-300 bg-white/80 px-3 py-1.5 text-xs font-medium uppercase tracking-wider"><span className="h-1.5 w-1.5 rounded-full bg-zinc-950" /> Backend AI Engineer</div>
+            <h1 className="max-w-4xl text-5xl font-semibold leading-[.98] tracking-[-0.04em] sm:text-7xl">I build things.<br /><span className="text-zinc-400">Then I troubleshoot them.</span></h1>
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-600">I build practical AI-powered software and digital products while developing into a stronger software and AI engineer.</p>
+            <div className="mt-9 flex flex-wrap gap-3"><Link href="/work" className="rounded-full bg-zinc-950 px-6 py-3 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-zinc-800">Explore my work →</Link><Link href="/about" className="rounded-full border border-zinc-300 bg-white px-6 py-3 text-sm font-medium transition hover:-translate-y-0.5 hover:border-zinc-950">About me</Link></div>
           </div>
-          <Link href="/contact" className="shrink-0 rounded-full bg-zinc-950 px-6 py-3 text-sm font-medium text-white hover:bg-zinc-800">Get In Touch</Link>
+          <div className="relative mx-auto w-full max-w-md"><div className="absolute -inset-6 rounded-[2rem] border border-dashed border-zinc-300" /><div className="relative aspect-square rounded-[2rem] bg-zinc-950 p-6 text-white shadow-2xl"><div className="flex items-center justify-between text-xs uppercase tracking-widest text-white/50"><span>Build system</span><span>01—03</span></div><div className="mt-10 flex h-[70%] items-center justify-center"><div className="relative flex h-40 w-40 items-center justify-center rounded-full border border-white/20 bg-white/5 text-4xl font-semibold"><div className="absolute inset-5 rounded-full border border-white/20" /><span className="relative">AI</span></div><div className="absolute h-px w-[75%] rotate-[-22deg] bg-white/15" /><div className="absolute h-px w-[75%] rotate-[22deg] bg-white/15" /></div><div className="flex justify-between border-t border-white/10 pt-4 text-xs text-white/50"><span>LEARN</span><span>BUILD</span><span>DEBUG</span><span>SHIP</span></div></div></div>
         </div>
-      </section>
-    </main>
-  );
+      </div>
+    </section>
+
+    <section className="border-b border-zinc-200 bg-zinc-50"><div className="mx-auto max-w-6xl px-6 py-5"><div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-xs font-medium uppercase tracking-widest text-zinc-500"><span>JavaScript</span><span>TypeScript</span><span>Next.js</span><span>Node.js</span><span>Prisma</span><span>AI</span><span>Problem Solving</span></div></div></section>
+
+    <section className="mx-auto max-w-6xl px-6 py-20 sm:py-24"><div className="flex items-end justify-between gap-6"><div><p className="text-xs font-medium uppercase tracking-[.2em] text-zinc-500">Selected Work</p><h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">Built. Broken. Fixed. Shipped.</h2></div><Link href="/work" className="hidden text-sm font-medium sm:block">View all →</Link></div><div className="mt-10 grid gap-6 lg:grid-cols-3">{projects.map((project) => <Link key={project.href} href={project.href} className="group"><ProjectGraphic type={project.type} /><div className="mt-5 flex items-center justify-between text-xs uppercase tracking-wider text-zinc-500"><span>{project.number} · {project.status}</span><span className="opacity-0 transition group-hover:opacity-100">Open →</span></div><h3 className="mt-3 text-2xl font-semibold tracking-tight group-hover:underline">{project.title}</h3><p className="mt-2 text-sm leading-6 text-zinc-600">{project.description}</p><div className="mt-4 flex flex-wrap gap-2">{project.tech.map((tech) => <span key={tech} className="rounded-full border border-zinc-200 px-2.5 py-1 text-xs text-zinc-600">{tech}</span>)}</div></Link>)}</div></section>
+
+    <section className="border-y border-zinc-200 bg-zinc-950 text-white"><div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 sm:py-24 lg:grid-cols-2 lg:items-center"><div><p className="text-xs font-medium uppercase tracking-[.2em] text-white/50">How I work</p><h2 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">The hard part is troubleshooting.</h2><p className="mt-6 max-w-xl leading-8 text-white/60">Projects don&apos;t always work on the first attempt. I&apos;ve learned to approach problems with patience, persistence, and commitment—keep testing, keep learning, and keep fixing.</p></div><div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10"><div className="bg-zinc-950 p-7"><span className="text-3xl font-semibold">01</span><p className="mt-3 text-sm text-white/50">Learn</p></div><div className="bg-zinc-950 p-7"><span className="text-3xl font-semibold">02</span><p className="mt-3 text-sm text-white/50">Build</p></div><div className="bg-zinc-950 p-7"><span className="text-3xl font-semibold">03</span><p className="mt-3 text-sm text-white/50">Troubleshoot</p></div><div className="bg-zinc-950 p-7"><span className="text-3xl font-semibold">04</span><p className="mt-3 text-sm text-white/50">Ship</p></div></div></div></section>
+
+    <section className="mx-auto max-w-6xl px-6 py-20 sm:py-24"><div className="grid gap-12 lg:grid-cols-[.7fr_1.3fr]"><div><p className="text-xs font-medium uppercase tracking-[.2em] text-zinc-500">Stack</p><h2 className="mt-3 text-3xl font-semibold tracking-tight">Tools I use to build.</h2></div><div className="flex flex-wrap content-start gap-3">{skills.map((skill) => <span key={skill} className="rounded-full border border-zinc-300 px-5 py-3 text-sm transition hover:-translate-y-0.5 hover:border-zinc-950">{skill}</span>)}</div></div></section>
+
+    <section className="border-t border-zinc-200"><div className="mx-auto flex max-w-6xl flex-col gap-7 px-6 py-20 sm:flex-row sm:items-center sm:justify-between"><div><p className="text-xs font-medium uppercase tracking-[.2em] text-zinc-500">Have a project or idea?</p><h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">Let&apos;s build something useful.</h2></div><Link href="/contact" className="w-fit rounded-full bg-zinc-950 px-6 py-3 text-sm font-medium text-white hover:bg-zinc-800">Get in touch →</Link></div></section>
+  </main>;
 }
