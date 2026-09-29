@@ -21,28 +21,28 @@ const nav = [
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
-      <body className="min-h-full bg-[#030712] text-white">
-        <header className="sticky top-0 z-50 border-b border-white/[.07] bg-[#030712]/85 backdrop-blur-xl">
+      <body className="min-h-full bg-[#f5f8fc] text-slate-900">
+        <header className="sticky top-0 z-50 border-b border-slate-200 bg-[#f5f8fc]/85 backdrop-blur-xl">
           <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
             <Link href="/" className="group flex items-center gap-3">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-cyan-300/20 bg-white/[.04] text-[10px] font-semibold text-cyan-200 transition group-hover:border-cyan-300/40">LM</span>
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-cyan-300/20 bg-white/80 text-[10px] font-semibold text-cyan-200 transition group-hover:border-cyan-300/40">LM</span>
               <span className="text-sm font-semibold tracking-tight">Leslei Makori</span>
             </Link>
             <div className="hidden items-center gap-7 text-sm text-slate-500 sm:flex">
-              {nav.map(([label, href]) => <Link key={href} href={href} className="transition hover:text-white">{label}</Link>)}
-              <Link href="/contact" className="rounded-full border border-white/10 bg-white/[.04] px-4 py-2 text-xs font-medium text-slate-300 transition hover:border-cyan-300/30 hover:text-white">Let&apos;s Talk →</Link>
+              {nav.map(([label, href]) => <Link key={href} href={href} className="transition hover:text-slate-900">{label}</Link>)}
+              <Link href="/contact" className="rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-xs font-medium text-slate-500 transition hover:border-cyan-300/30 hover:text-slate-900">Let&apos;s Talk →</Link>
             </div>
-            <Link href="/contact" className="rounded-full border border-white/10 px-3 py-2 text-xs text-slate-300 sm:hidden">Contact</Link>
+            <Link href="/contact" className="rounded-full border border-slate-200 px-3 py-2 text-xs text-slate-500 sm:hidden">Contact</Link>
           </nav>
         </header>
         {children}
-        <footer className="border-t border-white/[.07] bg-[#02050c]">
+        <footer className="border-t border-slate-200 bg-[#eaf0f7]">
           <div className="mx-auto max-w-6xl px-6 py-12">
             <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
-              <div><Link href="/" className="text-lg font-semibold tracking-tight">Leslei Makori</Link><p className="mt-2 text-sm text-slate-600">Backend AI Engineer · Builder · Learner</p></div>
-              <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-600">{nav.map(([label, href]) => <Link key={href} href={href} className="transition hover:text-slate-300">{label}</Link>)}<a href="mailto:Lesleimakori@gmail.com" className="transition hover:text-cyan-300">Email</a><a href="https://github.com/Leslei-254" target="_blank" rel="noreferrer" className="transition hover:text-slate-300">GitHub ↗</a><a href="https://www.linkedin.com/in/leslei-makori-8989681b4/" target="_blank" rel="noreferrer" className="transition hover:text-slate-300">LinkedIn ↗</a></div>
+              <div><Link href="/" className="text-lg font-semibold tracking-tight">Leslei Makori</Link><p className="mt-2 text-sm text-slate-500">Backend AI Engineer · Builder · Learner</p></div>
+              <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-500">{nav.map(([label, href]) => <Link key={href} href={href} className="transition hover:text-slate-500">{label}</Link>)}<a href="mailto:Lesleimakori@gmail.com" className="transition hover:text-cyan-300">Email</a><a href="https://github.com/Leslei-254" target="_blank" rel="noreferrer" className="transition hover:text-slate-500">GitHub ↗</a><a href="https://www.linkedin.com/in/leslei-makori-8989681b4/" target="_blank" rel="noreferrer" className="transition hover:text-slate-500">LinkedIn ↗</a></div>
             </div>
-            <div className="mt-10 flex flex-col gap-2 border-t border-white/[.06] pt-5 text-[10px] text-slate-700 sm:flex-row sm:items-center sm:justify-between"><span>© {new Date().getFullYear()} Leslei Makori</span><span>Built while learning, building, and shipping.</span></div>
+            <div className="mt-10 flex flex-col gap-2 border-t border-white/[.06] pt-5 text-[10px] text-slate-400 sm:flex-row sm:items-center sm:justify-between"><span>© {new Date().getFullYear()} Leslei Makori</span><span>Built while learning, building, and shipping.</span></div>
           </div>
         </footer>
       </body>
