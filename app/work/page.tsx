@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const projects = [
-  { number: "01", status: "Ready to use", title: "The Office Solutions (TOS Platform)", description: "A multi-business platform for companies to manage operations through industry-specific workspaces, tools, and dashboards.", href: "/work/leaddesk", tech: ["Next.js", "JavaScript", "Prisma", "Neon", "Vercel"], accent: "cyan" },
+  { number: "01", status: "Ready to use", title: "The Office Solutions (TOS Platform)", description: "A multi-business platform for companies to manage operations through industry-specific workspaces, tools, and dashboards.", href: "/work/tos", tech: ["Next.js", "JavaScript", "Prisma", "Neon", "Vercel"], accent: "cyan" },
   { number: "02", status: "Completed", title: "Polite Scraper", description: "A production-minded Node.js web scraper for collecting structured book data from Books to Scrape.", href: "/work/polite-scraper", tech: ["Node.js", "Cheerio", "Axios", "Schema validation"], accent: "blue" },
   { number: "03", status: "In development", title: "Dokile AI", description: "An AI productivity and creativity platform bringing AI tools, content creation, digital services, software development, domains, and hosting together in one place.", href: "/work/dokile-ai", tech: ["JavaScript", "TypeScript", "AI"], accent: "violet" },
 ];
